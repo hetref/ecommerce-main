@@ -393,6 +393,7 @@ export interface Order {
   orderedBy?: string | User;
   stripePaymentIntentID?: string;
   total: number;
+  status: 'Pending' | 'Processing' | 'Shipped' | 'Delivered';
   items?: {
     product: string | Product;
     price?: number;
