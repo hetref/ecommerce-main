@@ -46,6 +46,31 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: 'feedbacks',
+      label: 'Feedbacks',
+      type: 'array',
+      fields: [
+        {
+          name: 'name',
+          type: 'text',
+        },
+        {
+          name: 'email',
+          type: 'text',
+        },
+        {
+          name: 'rating',
+          type: 'number',
+          min: 1,
+          max: 5,
+        },
+        {
+          name: 'feedback',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'publishedOn',
       type: 'date',
       admin: {
