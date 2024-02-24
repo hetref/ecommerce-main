@@ -13,6 +13,8 @@ import { generateMeta } from '../../../_utilities/generateMeta'
 import { Gutter } from '../../../_components/Gutter'
 
 import classes from './index.module.scss'
+import { Button } from '../../../_components/Button'
+import FeedbackForm from '../../../_components/Feedbacks'
 
 // Force this page to be dynamic so that Next.js does not cache it
 // See the note in '../../../[slug]/page.tsx' about this
@@ -55,6 +57,7 @@ export default async function Product({ params: { slug } }) {
         <div className={classes.feedbackWrapper}>
           <div className={classes.heading}>
             <h2>Feedbacks/Reviews</h2>
+            <FeedbackForm />
           </div>
           <div className={classes.gridWrapper}>
             {product?.feedbacks &&
@@ -73,27 +76,29 @@ export default async function Product({ params: { slug } }) {
           </div>
         </div>
       </Gutter>
-      <Blocks
-        disableTopPadding
-        blocks={[
-          {
-            blockType: 'relatedProducts',
-            blockName: 'Related Product',
-            relationTo: 'products',
-            introContent: [
-              {
-                type: 'h3',
-                children: [
-                  {
-                    text: 'Related Products',
-                  },
-                ],
-              },
-            ],
-            docs: relatedProducts,
-          },
-        ]}
-      />
+      {relatedProducts?.length > 0 && (
+        <Blocks
+          disableTopPadding
+          blocks={[
+            {
+              blockType: 'relatedProducts',
+              blockName: 'Related Product',
+              relationTo: 'products',
+              introContent: [
+                {
+                  type: 'h3',
+                  children: [
+                    {
+                      text: 'Related Products',
+                    },
+                  ],
+                },
+              ],
+              docs: relatedProducts,
+            },
+          ]}
+        />
+      )}
     </>
   )
 }
