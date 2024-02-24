@@ -127,3 +127,20 @@ a {
 svg {
   vertical-align: middle;
 }
+
+.headlogo {
+  width: 50%;
+}
+
+.navwrapper {
+  background: black;
+}
+
+.navwrapper nav span,
+.navwrapper nav .link {
+  color: white !important;
+}
+
+.navwrapper nav button {
+  background: #2A402B !important;
+}

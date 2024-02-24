@@ -27,7 +27,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    padding: 0.75rem;
+    padding: 1.25rem;
     border-radius: 50px;
     background-color: white;
     color: #000;
@@ -36,9 +36,8 @@
 
 .slide-content {
     text-align: left;
-    width: 40%;
+    width: 50%;
     padding-left: 7rem;
-    margin-right: auto;
 }
 
 .swiper-slide-active .slide-content {
@@ -47,19 +46,20 @@
 
 .slide-title {
     width: fit-content;
-    font-size: 8rem;
-    line-height: 0.45em;
+    font-size: 4.5rem;
+    line-height: 0.95em;
+    margin-top: 6.5rem;
 }
 
 .slide-subtitle {
-    font-size: 4rem;
+    font-size: 2rem;
     padding-left: 1rem;
 }
 
 .slide-desc {
     font-family: 'Montserrat';
     font-weight: 100;
-    margin-top: -5rem;
+    margin-top: 1rem;
 }
 
 .slide-button {
@@ -94,6 +94,16 @@
 .slide-button::after {
     width: 150px;
     height: 30px;
+}
+
+.swiper-button-next:after {
+    content: " > " !important;
+    width: 50px;
+}
+
+.swiper-button-prev:after {
+    content: " < " !important;
+    width: 50px;
 }
 
 .noselect {

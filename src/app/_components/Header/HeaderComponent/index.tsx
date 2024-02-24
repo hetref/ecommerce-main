@@ -16,19 +16,21 @@ const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
 
   return (
-    <nav
-      className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide]
-        .filter(Boolean)
-        .join(' ')}
-    >
-      <Gutter className={classes.wrap}>
-        <Link href="/">
-          <Image src="/logo-black.png" alt="logo" width={100} height={100} />
-        </Link>
+    <div className='navwrapper'>
+      <nav
+        className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide]
+          .filter(Boolean)
+          .join(' ')}
+      >
+        <Gutter className={classes.wrap}>
+          <Link href="/">
+            <Image className='headlogo' src="/logo-black.png" alt="logo" width={100} height={100} />
+          </Link>
 
-        <HeaderNav header={header} />
-      </Gutter>
-    </nav>
+          <HeaderNav header={header} />
+        </Gutter>
+      </nav>
+    </div>
   )
 }
 

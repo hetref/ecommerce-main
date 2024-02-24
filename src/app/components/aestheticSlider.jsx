@@ -1,10 +1,10 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import './../styles/AestheticSlider.css'
-import { Navigation, Autoplay } from 'swiper/modules'
-import '../styles/AestheticSlider.css'
-import s1image from '../images/slide1.jpg'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import './../styles/AestheticSlider.css';
+import { Navigation, Autoplay } from 'swiper/modules';
+import '../styles/AestheticSlider.css';
+import s1image from '../images/headerbg.png';
 
 const AestheticSlider = () => {
   const s1bg = [
