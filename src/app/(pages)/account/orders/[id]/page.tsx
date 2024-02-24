@@ -47,12 +47,13 @@ export default async function Order({ params: { id } }) {
     <div>
       <h5>
         {`Order`}
-        <span className={classes.id}>{` ${order.id}`}</span>
+        <span className={classes.id}>{` #${order.id}`}</span>
       </h5>
       <div className={classes.itemMeta}>
         <p>{`ID: ${order.id}`}</p>
         <p>{`Payment Intent: ${order.stripePaymentIntentID}`}</p>
         <p>{`Ordered On: ${formatDateTime(order.createdAt)}`}</p>
+        <p>{`Status: ${order.status}`}</p>
         <p className={classes.total}>
           {'Total: '}
           {new Intl.NumberFormat('en-US', {

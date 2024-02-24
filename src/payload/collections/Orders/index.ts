@@ -51,6 +51,13 @@ export const Orders: CollectionConfig = {
       min: 0,
     },
     {
+      name: 'status',
+      label: 'Status',
+      type: 'select',
+      options: ['Pending', 'Processing', 'Shipped', 'Delivered'],
+      defaultValue: 'Pending',
+    },
+    {
       name: 'items',
       type: 'array',
       fields: [

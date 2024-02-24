@@ -263,6 +263,8 @@ input Page_Hero_Links_Link_Icon_where_and {
   width: Page_Hero_Links_Link_Icon_width_operator
   height: Page_Hero_Links_Link_Icon_height_operator
   id: Page_Hero_Links_Link_Icon_id_operator
+  AND: [Page_Hero_Links_Link_Icon_where_and]
+  OR: [Page_Hero_Links_Link_Icon_where_or]
 }
 
 input Page_Hero_Links_Link_Icon_where_or {
@@ -277,6 +279,8 @@ input Page_Hero_Links_Link_Icon_where_or {
   width: Page_Hero_Links_Link_Icon_width_operator
   height: Page_Hero_Links_Link_Icon_height_operator
   id: Page_Hero_Links_Link_Icon_id_operator
+  AND: [Page_Hero_Links_Link_Icon_where_and]
+  OR: [Page_Hero_Links_Link_Icon_where_or]
 }
 
 enum Page_Hero_Links_Link_appearance {
@@ -427,6 +431,8 @@ input Page_Hero_Media_where_and {
   width: Page_Hero_Media_width_operator
   height: Page_Hero_Media_height_operator
   id: Page_Hero_Media_id_operator
+  AND: [Page_Hero_Media_where_and]
+  OR: [Page_Hero_Media_where_or]
 }
 
 input Page_Hero_Media_where_or {
@@ -441,6 +447,8 @@ input Page_Hero_Media_where_or {
   width: Page_Hero_Media_width_operator
   height: Page_Hero_Media_height_operator
   id: Page_Hero_Media_id_operator
+  AND: [Page_Hero_Media_where_and]
+  OR: [Page_Hero_Media_where_or]
 }
 
 union Page_Layout = Cta | Content | MediaBlock | Archive
@@ -627,6 +635,8 @@ input Cta_Links_Link_Icon_where_and {
   width: Cta_Links_Link_Icon_width_operator
   height: Cta_Links_Link_Icon_height_operator
   id: Cta_Links_Link_Icon_id_operator
+  AND: [Cta_Links_Link_Icon_where_and]
+  OR: [Cta_Links_Link_Icon_where_or]
 }
 
 input Cta_Links_Link_Icon_where_or {
@@ -641,6 +651,8 @@ input Cta_Links_Link_Icon_where_or {
   width: Cta_Links_Link_Icon_width_operator
   height: Cta_Links_Link_Icon_height_operator
   id: Cta_Links_Link_Icon_id_operator
+  AND: [Cta_Links_Link_Icon_where_and]
+  OR: [Cta_Links_Link_Icon_where_or]
 }
 
 enum Cta_Links_Link_appearance {
@@ -839,6 +851,8 @@ input Content_Columns_Link_Icon_where_and {
   width: Content_Columns_Link_Icon_width_operator
   height: Content_Columns_Link_Icon_height_operator
   id: Content_Columns_Link_Icon_id_operator
+  AND: [Content_Columns_Link_Icon_where_and]
+  OR: [Content_Columns_Link_Icon_where_or]
 }
 
 input Content_Columns_Link_Icon_where_or {
@@ -853,6 +867,8 @@ input Content_Columns_Link_Icon_where_or {
   width: Content_Columns_Link_Icon_width_operator
   height: Content_Columns_Link_Icon_height_operator
   id: Content_Columns_Link_Icon_id_operator
+  AND: [Content_Columns_Link_Icon_where_and]
+  OR: [Content_Columns_Link_Icon_where_or]
 }
 
 enum Content_Columns_Link_appearance {
@@ -1017,6 +1033,8 @@ input MediaBlock_Media_where_and {
   width: MediaBlock_Media_width_operator
   height: MediaBlock_Media_height_operator
   id: MediaBlock_Media_id_operator
+  AND: [MediaBlock_Media_where_and]
+  OR: [MediaBlock_Media_where_or]
 }
 
 input MediaBlock_Media_where_or {
@@ -1031,6 +1049,8 @@ input MediaBlock_Media_where_or {
   width: MediaBlock_Media_width_operator
   height: MediaBlock_Media_height_operator
   id: MediaBlock_Media_id_operator
+  AND: [MediaBlock_Media_where_and]
+  OR: [MediaBlock_Media_where_or]
 }
 
 type Archive {
@@ -1208,6 +1228,8 @@ input Category_Media_where_and {
   width: Category_Media_width_operator
   height: Category_Media_height_operator
   id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
 }
 
 input Category_Media_where_or {
@@ -1222,6 +1244,8 @@ input Category_Media_where_or {
   width: Category_Media_width_operator
   height: Category_Media_height_operator
   id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
 }
 
 type Category_Breadcrumbs {
@@ -1245,6 +1269,7 @@ union Archive_SelectedDocs = Product
 type Product {
   id: String
   title: String
+  feedbacks: [Product_Feedbacks!]
   publishedOn: DateTime
   layout: [Product_Layout!]
   stripeProductID: String
@@ -1259,6 +1284,14 @@ type Product {
   updatedAt: DateTime
   createdAt: DateTime
   _status: Product__status
+}
+
+type Product_Feedbacks {
+  name: String
+  email: String
+  rating: Float
+  feedback: String
+  id: String
 }
 
 union Product_Layout = Cta | Content | MediaBlock | Archive
@@ -1413,6 +1446,8 @@ input Product_Meta_Image_where_and {
   width: Product_Meta_Image_width_operator
   height: Product_Meta_Image_height_operator
   id: Product_Meta_Image_id_operator
+  AND: [Product_Meta_Image_where_and]
+  OR: [Product_Meta_Image_where_or]
 }
 
 input Product_Meta_Image_where_or {
@@ -1427,6 +1462,8 @@ input Product_Meta_Image_where_or {
   width: Product_Meta_Image_width_operator
   height: Product_Meta_Image_height_operator
   id: Product_Meta_Image_id_operator
+  AND: [Product_Meta_Image_where_and]
+  OR: [Product_Meta_Image_where_or]
 }
 
 enum Product__status {
@@ -1593,6 +1630,8 @@ input Page_Meta_Image_where_and {
   width: Page_Meta_Image_width_operator
   height: Page_Meta_Image_height_operator
   id: Page_Meta_Image_id_operator
+  AND: [Page_Meta_Image_where_and]
+  OR: [Page_Meta_Image_where_or]
 }
 
 input Page_Meta_Image_where_or {
@@ -1607,6 +1646,8 @@ input Page_Meta_Image_where_or {
   width: Page_Meta_Image_width_operator
   height: Page_Meta_Image_height_operator
   id: Page_Meta_Image_id_operator
+  AND: [Page_Meta_Image_where_and]
+  OR: [Page_Meta_Image_where_or]
 }
 
 enum Page__status {
@@ -1888,6 +1929,8 @@ input Page_where_and {
   createdAt: Page_createdAt_operator
   _status: Page__status_operator
   id: Page_id_operator
+  AND: [Page_where_and]
+  OR: [Page_where_or]
 }
 
 input Page_where_or {
@@ -1912,6 +1955,8 @@ input Page_where_or {
   createdAt: Page_createdAt_operator
   _status: Page__status_operator
   id: Page_id_operator
+  AND: [Page_where_and]
+  OR: [Page_where_or]
 }
 
 type pagesDocAccess {
@@ -2399,34 +2444,9 @@ type PagesDocAccessFields_meta_Delete {
 }
 
 type PagesDocAccessFields_meta_Fields {
-  overview: PagesDocAccessFields_meta_overview
   title: PagesDocAccessFields_meta_title
   description: PagesDocAccessFields_meta_description
   image: PagesDocAccessFields_meta_image
-  preview: PagesDocAccessFields_meta_preview
-}
-
-type PagesDocAccessFields_meta_overview {
-  create: PagesDocAccessFields_meta_overview_Create
-  read: PagesDocAccessFields_meta_overview_Read
-  update: PagesDocAccessFields_meta_overview_Update
-  delete: PagesDocAccessFields_meta_overview_Delete
-}
-
-type PagesDocAccessFields_meta_overview_Create {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_overview_Read {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_overview_Update {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_overview_Delete {
-  permission: Boolean!
 }
 
 type PagesDocAccessFields_meta_title {
@@ -2495,29 +2515,6 @@ type PagesDocAccessFields_meta_image_Update {
 }
 
 type PagesDocAccessFields_meta_image_Delete {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_preview {
-  create: PagesDocAccessFields_meta_preview_Create
-  read: PagesDocAccessFields_meta_preview_Read
-  update: PagesDocAccessFields_meta_preview_Update
-  delete: PagesDocAccessFields_meta_preview_Delete
-}
-
-type PagesDocAccessFields_meta_preview_Create {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_preview_Read {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_preview_Update {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_meta_preview_Delete {
   permission: Boolean!
 }
 
@@ -2829,6 +2826,8 @@ input PageVersion_Version_Hero_Links_Link_Icon_where_and {
   width: PageVersion_Version_Hero_Links_Link_Icon_width_operator
   height: PageVersion_Version_Hero_Links_Link_Icon_height_operator
   id: PageVersion_Version_Hero_Links_Link_Icon_id_operator
+  AND: [PageVersion_Version_Hero_Links_Link_Icon_where_and]
+  OR: [PageVersion_Version_Hero_Links_Link_Icon_where_or]
 }
 
 input PageVersion_Version_Hero_Links_Link_Icon_where_or {
@@ -2843,6 +2842,8 @@ input PageVersion_Version_Hero_Links_Link_Icon_where_or {
   width: PageVersion_Version_Hero_Links_Link_Icon_width_operator
   height: PageVersion_Version_Hero_Links_Link_Icon_height_operator
   id: PageVersion_Version_Hero_Links_Link_Icon_id_operator
+  AND: [PageVersion_Version_Hero_Links_Link_Icon_where_and]
+  OR: [PageVersion_Version_Hero_Links_Link_Icon_where_or]
 }
 
 enum PageVersion_Version_Hero_Links_Link_appearance {
@@ -2993,6 +2994,8 @@ input PageVersion_Version_Hero_Media_where_and {
   width: PageVersion_Version_Hero_Media_width_operator
   height: PageVersion_Version_Hero_Media_height_operator
   id: PageVersion_Version_Hero_Media_id_operator
+  AND: [PageVersion_Version_Hero_Media_where_and]
+  OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
 input PageVersion_Version_Hero_Media_where_or {
@@ -3007,6 +3010,8 @@ input PageVersion_Version_Hero_Media_where_or {
   width: PageVersion_Version_Hero_Media_width_operator
   height: PageVersion_Version_Hero_Media_height_operator
   id: PageVersion_Version_Hero_Media_id_operator
+  AND: [PageVersion_Version_Hero_Media_where_and]
+  OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
 union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive
@@ -3159,6 +3164,8 @@ input PageVersion_Version_Meta_Image_where_and {
   width: PageVersion_Version_Meta_Image_width_operator
   height: PageVersion_Version_Meta_Image_height_operator
   id: PageVersion_Version_Meta_Image_id_operator
+  AND: [PageVersion_Version_Meta_Image_where_and]
+  OR: [PageVersion_Version_Meta_Image_where_or]
 }
 
 input PageVersion_Version_Meta_Image_where_or {
@@ -3173,6 +3180,8 @@ input PageVersion_Version_Meta_Image_where_or {
   width: PageVersion_Version_Meta_Image_width_operator
   height: PageVersion_Version_Meta_Image_height_operator
   id: PageVersion_Version_Meta_Image_id_operator
+  AND: [PageVersion_Version_Meta_Image_where_and]
+  OR: [PageVersion_Version_Meta_Image_where_or]
 }
 
 enum PageVersion_Version__status {
@@ -3499,6 +3508,8 @@ input versionsPage_where_and {
   updatedAt: versionsPage_updatedAt_operator
   latest: versionsPage_latest_operator
   id: versionsPage_id_operator
+  AND: [versionsPage_where_and]
+  OR: [versionsPage_where_or]
 }
 
 input versionsPage_where_or {
@@ -3527,6 +3538,8 @@ input versionsPage_where_or {
   updatedAt: versionsPage_updatedAt_operator
   latest: versionsPage_latest_operator
   id: versionsPage_id_operator
+  AND: [versionsPage_where_and]
+  OR: [versionsPage_where_or]
 }
 
 type Products {
@@ -3545,6 +3558,11 @@ type Products {
 
 input Product_where {
   title: Product_title_operator
+  feedbacks__name: Product_feedbacks__name_operator
+  feedbacks__email: Product_feedbacks__email_operator
+  feedbacks__rating: Product_feedbacks__rating_operator
+  feedbacks__feedback: Product_feedbacks__feedback_operator
+  feedbacks__id: Product_feedbacks__id_operator
   publishedOn: Product_publishedOn_operator
   stripeProductID: Product_stripeProductID_operator
   priceJSON: Product_priceJSON_operator
@@ -3572,6 +3590,60 @@ input Product_title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+}
+
+input Product_feedbacks__name_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_feedbacks__email_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_feedbacks__rating_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Product_feedbacks__feedback_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_feedbacks__id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
 }
 
 input Product_publishedOn_operator {
@@ -3719,6 +3791,11 @@ input Product_id_operator {
 
 input Product_where_and {
   title: Product_title_operator
+  feedbacks__name: Product_feedbacks__name_operator
+  feedbacks__email: Product_feedbacks__email_operator
+  feedbacks__rating: Product_feedbacks__rating_operator
+  feedbacks__feedback: Product_feedbacks__feedback_operator
+  feedbacks__id: Product_feedbacks__id_operator
   publishedOn: Product_publishedOn_operator
   stripeProductID: Product_stripeProductID_operator
   priceJSON: Product_priceJSON_operator
@@ -3734,10 +3811,17 @@ input Product_where_and {
   createdAt: Product_createdAt_operator
   _status: Product__status_operator
   id: Product_id_operator
+  AND: [Product_where_and]
+  OR: [Product_where_or]
 }
 
 input Product_where_or {
   title: Product_title_operator
+  feedbacks__name: Product_feedbacks__name_operator
+  feedbacks__email: Product_feedbacks__email_operator
+  feedbacks__rating: Product_feedbacks__rating_operator
+  feedbacks__feedback: Product_feedbacks__feedback_operator
+  feedbacks__id: Product_feedbacks__id_operator
   publishedOn: Product_publishedOn_operator
   stripeProductID: Product_stripeProductID_operator
   priceJSON: Product_priceJSON_operator
@@ -3753,6 +3837,8 @@ input Product_where_or {
   createdAt: Product_createdAt_operator
   _status: Product__status_operator
   id: Product_id_operator
+  AND: [Product_where_and]
+  OR: [Product_where_or]
 }
 
 type productsDocAccess {
@@ -3766,6 +3852,7 @@ type productsDocAccess {
 
 type ProductsDocAccessFields {
   title: ProductsDocAccessFields_title
+  feedbacks: ProductsDocAccessFields_feedbacks
   publishedOn: ProductsDocAccessFields_publishedOn
   layout: ProductsDocAccessFields_layout
   stripeProductID: ProductsDocAccessFields_stripeProductID
@@ -3802,6 +3889,153 @@ type ProductsDocAccessFields_title_Update {
 }
 
 type ProductsDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks {
+  create: ProductsDocAccessFields_feedbacks_Create
+  read: ProductsDocAccessFields_feedbacks_Read
+  update: ProductsDocAccessFields_feedbacks_Update
+  delete: ProductsDocAccessFields_feedbacks_Delete
+  fields: ProductsDocAccessFields_feedbacks_Fields
+}
+
+type ProductsDocAccessFields_feedbacks_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_Fields {
+  name: ProductsDocAccessFields_feedbacks_name
+  email: ProductsDocAccessFields_feedbacks_email
+  rating: ProductsDocAccessFields_feedbacks_rating
+  feedback: ProductsDocAccessFields_feedbacks_feedback
+  id: ProductsDocAccessFields_feedbacks_id
+}
+
+type ProductsDocAccessFields_feedbacks_name {
+  create: ProductsDocAccessFields_feedbacks_name_Create
+  read: ProductsDocAccessFields_feedbacks_name_Read
+  update: ProductsDocAccessFields_feedbacks_name_Update
+  delete: ProductsDocAccessFields_feedbacks_name_Delete
+}
+
+type ProductsDocAccessFields_feedbacks_name_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_name_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_name_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_name_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_email {
+  create: ProductsDocAccessFields_feedbacks_email_Create
+  read: ProductsDocAccessFields_feedbacks_email_Read
+  update: ProductsDocAccessFields_feedbacks_email_Update
+  delete: ProductsDocAccessFields_feedbacks_email_Delete
+}
+
+type ProductsDocAccessFields_feedbacks_email_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_email_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_email_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_email_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_rating {
+  create: ProductsDocAccessFields_feedbacks_rating_Create
+  read: ProductsDocAccessFields_feedbacks_rating_Read
+  update: ProductsDocAccessFields_feedbacks_rating_Update
+  delete: ProductsDocAccessFields_feedbacks_rating_Delete
+}
+
+type ProductsDocAccessFields_feedbacks_rating_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_rating_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_rating_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_rating_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_feedback {
+  create: ProductsDocAccessFields_feedbacks_feedback_Create
+  read: ProductsDocAccessFields_feedbacks_feedback_Read
+  update: ProductsDocAccessFields_feedbacks_feedback_Update
+  delete: ProductsDocAccessFields_feedbacks_feedback_Delete
+}
+
+type ProductsDocAccessFields_feedbacks_feedback_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_feedback_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_feedback_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_feedback_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_id {
+  create: ProductsDocAccessFields_feedbacks_id_Create
+  read: ProductsDocAccessFields_feedbacks_id_Read
+  update: ProductsDocAccessFields_feedbacks_id_Update
+  delete: ProductsDocAccessFields_feedbacks_id_Delete
+}
+
+type ProductsDocAccessFields_feedbacks_id_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_id_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_id_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_feedbacks_id_Delete {
   permission: Boolean!
 }
 
@@ -4060,34 +4294,9 @@ type ProductsDocAccessFields_meta_Delete {
 }
 
 type ProductsDocAccessFields_meta_Fields {
-  overview: ProductsDocAccessFields_meta_overview
   title: ProductsDocAccessFields_meta_title
   description: ProductsDocAccessFields_meta_description
   image: ProductsDocAccessFields_meta_image
-  preview: ProductsDocAccessFields_meta_preview
-}
-
-type ProductsDocAccessFields_meta_overview {
-  create: ProductsDocAccessFields_meta_overview_Create
-  read: ProductsDocAccessFields_meta_overview_Read
-  update: ProductsDocAccessFields_meta_overview_Update
-  delete: ProductsDocAccessFields_meta_overview_Delete
-}
-
-type ProductsDocAccessFields_meta_overview_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_overview_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_overview_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_overview_Delete {
-  permission: Boolean!
 }
 
 type ProductsDocAccessFields_meta_title {
@@ -4156,29 +4365,6 @@ type ProductsDocAccessFields_meta_image_Update {
 }
 
 type ProductsDocAccessFields_meta_image_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_preview {
-  create: ProductsDocAccessFields_meta_preview_Create
-  read: ProductsDocAccessFields_meta_preview_Read
-  update: ProductsDocAccessFields_meta_preview_Update
-  delete: ProductsDocAccessFields_meta_preview_Delete
-}
-
-type ProductsDocAccessFields_meta_preview_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_preview_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_preview_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_meta_preview_Delete {
   permission: Boolean!
 }
 
@@ -4287,6 +4473,7 @@ type ProductVersion {
 
 type ProductVersion_Version {
   title: String
+  feedbacks: [ProductVersion_Version_Feedbacks!]
   publishedOn: DateTime
   layout: [ProductVersion_Version_Layout!]
   stripeProductID: String
@@ -4301,6 +4488,14 @@ type ProductVersion_Version {
   updatedAt: DateTime
   createdAt: DateTime
   _status: ProductVersion_Version__status
+}
+
+type ProductVersion_Version_Feedbacks {
+  name: String
+  email: String
+  rating: Float
+  feedback: String
+  id: String
 }
 
 union ProductVersion_Version_Layout = Cta | Content | MediaBlock | Archive
@@ -4455,6 +4650,8 @@ input ProductVersion_Version_Meta_Image_where_and {
   width: ProductVersion_Version_Meta_Image_width_operator
   height: ProductVersion_Version_Meta_Image_height_operator
   id: ProductVersion_Version_Meta_Image_id_operator
+  AND: [ProductVersion_Version_Meta_Image_where_and]
+  OR: [ProductVersion_Version_Meta_Image_where_or]
 }
 
 input ProductVersion_Version_Meta_Image_where_or {
@@ -4469,6 +4666,8 @@ input ProductVersion_Version_Meta_Image_where_or {
   width: ProductVersion_Version_Meta_Image_width_operator
   height: ProductVersion_Version_Meta_Image_height_operator
   id: ProductVersion_Version_Meta_Image_id_operator
+  AND: [ProductVersion_Version_Meta_Image_where_and]
+  OR: [ProductVersion_Version_Meta_Image_where_or]
 }
 
 enum ProductVersion_Version__status {
@@ -4493,6 +4692,11 @@ type versionsProducts {
 input versionsProduct_where {
   parent: versionsProduct_parent_operator
   version__title: versionsProduct_version__title_operator
+  version__feedbacks__name: versionsProduct_version__feedbacks__name_operator
+  version__feedbacks__email: versionsProduct_version__feedbacks__email_operator
+  version__feedbacks__rating: versionsProduct_version__feedbacks__rating_operator
+  version__feedbacks__feedback: versionsProduct_version__feedbacks__feedback_operator
+  version__feedbacks__id: versionsProduct_version__feedbacks__id_operator
   version__publishedOn: versionsProduct_version__publishedOn_operator
   version__stripeProductID: versionsProduct_version__stripeProductID_operator
   version__priceJSON: versionsProduct_version__priceJSON_operator
@@ -4532,6 +4736,60 @@ input versionsProduct_version__title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+}
+
+input versionsProduct_version__feedbacks__name_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__feedbacks__email_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__feedbacks__rating_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input versionsProduct_version__feedbacks__feedback_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__feedbacks__id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
 }
 
 input versionsProduct_version__publishedOn_operator {
@@ -4708,6 +4966,11 @@ input versionsProduct_id_operator {
 input versionsProduct_where_and {
   parent: versionsProduct_parent_operator
   version__title: versionsProduct_version__title_operator
+  version__feedbacks__name: versionsProduct_version__feedbacks__name_operator
+  version__feedbacks__email: versionsProduct_version__feedbacks__email_operator
+  version__feedbacks__rating: versionsProduct_version__feedbacks__rating_operator
+  version__feedbacks__feedback: versionsProduct_version__feedbacks__feedback_operator
+  version__feedbacks__id: versionsProduct_version__feedbacks__id_operator
   version__publishedOn: versionsProduct_version__publishedOn_operator
   version__stripeProductID: versionsProduct_version__stripeProductID_operator
   version__priceJSON: versionsProduct_version__priceJSON_operator
@@ -4726,11 +4989,18 @@ input versionsProduct_where_and {
   updatedAt: versionsProduct_updatedAt_operator
   latest: versionsProduct_latest_operator
   id: versionsProduct_id_operator
+  AND: [versionsProduct_where_and]
+  OR: [versionsProduct_where_or]
 }
 
 input versionsProduct_where_or {
   parent: versionsProduct_parent_operator
   version__title: versionsProduct_version__title_operator
+  version__feedbacks__name: versionsProduct_version__feedbacks__name_operator
+  version__feedbacks__email: versionsProduct_version__feedbacks__email_operator
+  version__feedbacks__rating: versionsProduct_version__feedbacks__rating_operator
+  version__feedbacks__feedback: versionsProduct_version__feedbacks__feedback_operator
+  version__feedbacks__id: versionsProduct_version__feedbacks__id_operator
   version__publishedOn: versionsProduct_version__publishedOn_operator
   version__stripeProductID: versionsProduct_version__stripeProductID_operator
   version__priceJSON: versionsProduct_version__priceJSON_operator
@@ -4749,6 +5019,8 @@ input versionsProduct_where_or {
   updatedAt: versionsProduct_updatedAt_operator
   latest: versionsProduct_latest_operator
   id: versionsProduct_id_operator
+  AND: [versionsProduct_where_and]
+  OR: [versionsProduct_where_or]
 }
 
 type Order {
@@ -4756,6 +5028,7 @@ type Order {
   orderedBy: User
   stripePaymentIntentID: String
   total: Float!
+  status: Order_status
   items: [Order_Items!]
   updatedAt: DateTime
   createdAt: DateTime
@@ -4801,6 +5074,13 @@ A field whose value conforms to the standard internet email address format as sp
 """
 scalar EmailAddress @specifiedBy(url: "https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address")
 
+enum Order_status {
+  Pending
+  Processing
+  Shipped
+  Delivered
+}
+
 type Order_Items {
   product: Product
   price: Float
@@ -4826,6 +5106,7 @@ input Order_where {
   orderedBy: Order_orderedBy_operator
   stripePaymentIntentID: Order_stripePaymentIntentID_operator
   total: Order_total_operator
+  status: Order_status_operator
   items__product: Order_items__product_operator
   items__price: Order_items__price_operator
   items__quantity: Order_items__quantity_operator
@@ -4864,6 +5145,22 @@ input Order_total_operator {
   greater_than: Float
   less_than_equal: Float
   less_than: Float
+}
+
+input Order_status_operator {
+  equals: Order_status_Input
+  not_equals: Order_status_Input
+  in: [Order_status_Input]
+  not_in: [Order_status_Input]
+  all: [Order_status_Input]
+  exists: Boolean
+}
+
+enum Order_status_Input {
+  Pending
+  Processing
+  Shipped
+  Delivered
 }
 
 input Order_items__product_operator {
@@ -4942,6 +5239,7 @@ input Order_where_and {
   orderedBy: Order_orderedBy_operator
   stripePaymentIntentID: Order_stripePaymentIntentID_operator
   total: Order_total_operator
+  status: Order_status_operator
   items__product: Order_items__product_operator
   items__price: Order_items__price_operator
   items__quantity: Order_items__quantity_operator
@@ -4949,12 +5247,15 @@ input Order_where_and {
   updatedAt: Order_updatedAt_operator
   createdAt: Order_createdAt_operator
   id: Order_id_operator
+  AND: [Order_where_and]
+  OR: [Order_where_or]
 }
 
 input Order_where_or {
   orderedBy: Order_orderedBy_operator
   stripePaymentIntentID: Order_stripePaymentIntentID_operator
   total: Order_total_operator
+  status: Order_status_operator
   items__product: Order_items__product_operator
   items__price: Order_items__price_operator
   items__quantity: Order_items__quantity_operator
@@ -4962,6 +5263,8 @@ input Order_where_or {
   updatedAt: Order_updatedAt_operator
   createdAt: Order_createdAt_operator
   id: Order_id_operator
+  AND: [Order_where_and]
+  OR: [Order_where_or]
 }
 
 type ordersDocAccess {
@@ -4976,6 +5279,7 @@ type OrdersDocAccessFields {
   orderedBy: OrdersDocAccessFields_orderedBy
   stripePaymentIntentID: OrdersDocAccessFields_stripePaymentIntentID
   total: OrdersDocAccessFields_total
+  status: OrdersDocAccessFields_status
   items: OrdersDocAccessFields_items
   updatedAt: OrdersDocAccessFields_updatedAt
   createdAt: OrdersDocAccessFields_createdAt
@@ -5047,6 +5351,29 @@ type OrdersDocAccessFields_total_Update {
 }
 
 type OrdersDocAccessFields_total_Delete {
+  permission: Boolean!
+}
+
+type OrdersDocAccessFields_status {
+  create: OrdersDocAccessFields_status_Create
+  read: OrdersDocAccessFields_status_Read
+  update: OrdersDocAccessFields_status_Update
+  delete: OrdersDocAccessFields_status_Delete
+}
+
+type OrdersDocAccessFields_status_Create {
+  permission: Boolean!
+}
+
+type OrdersDocAccessFields_status_Read {
+  permission: Boolean!
+}
+
+type OrdersDocAccessFields_status_Update {
+  permission: Boolean!
+}
+
+type OrdersDocAccessFields_status_Delete {
   permission: Boolean!
 }
 
@@ -5395,6 +5722,8 @@ input Media_where_and {
   width: Media_width_operator
   height: Media_height_operator
   id: Media_id_operator
+  AND: [Media_where_and]
+  OR: [Media_where_or]
 }
 
 input Media_where_or {
@@ -5409,6 +5738,8 @@ input Media_where_or {
   width: Media_width_operator
   height: Media_height_operator
   id: Media_id_operator
+  AND: [Media_where_and]
+  OR: [Media_where_or]
 }
 
 type mediaDocAccess {
@@ -5822,6 +6153,8 @@ input Category_where_and {
   updatedAt: Category_updatedAt_operator
   createdAt: Category_createdAt_operator
   id: Category_id_operator
+  AND: [Category_where_and]
+  OR: [Category_where_or]
 }
 
 input Category_where_or {
@@ -5835,6 +6168,8 @@ input Category_where_or {
   updatedAt: Category_updatedAt_operator
   createdAt: Category_createdAt_operator
   id: Category_id_operator
+  AND: [Category_where_and]
+  OR: [Category_where_or]
 }
 
 type categoriesDocAccess {
@@ -6280,6 +6615,8 @@ input User_where_and {
   createdAt: User_createdAt_operator
   email: User_email_operator
   id: User_id_operator
+  AND: [User_where_and]
+  OR: [User_where_or]
 }
 
 input User_where_or {
@@ -6295,6 +6632,8 @@ input User_where_or {
   createdAt: User_createdAt_operator
   email: User_email_operator
   id: User_id_operator
+  AND: [User_where_and]
+  OR: [User_where_or]
 }
 
 type usersDocAccess {
@@ -6826,6 +7165,8 @@ input Redirect_where_and {
   updatedAt: Redirect_updatedAt_operator
   createdAt: Redirect_createdAt_operator
   id: Redirect_id_operator
+  AND: [Redirect_where_and]
+  OR: [Redirect_where_or]
 }
 
 input Redirect_where_or {
@@ -6836,6 +7177,8 @@ input Redirect_where_or {
   updatedAt: Redirect_updatedAt_operator
   createdAt: Redirect_createdAt_operator
   id: Redirect_id_operator
+  AND: [Redirect_where_and]
+  OR: [Redirect_where_or]
 }
 
 type redirectsDocAccess {
@@ -7156,6 +7499,8 @@ input PayloadPreference_where_and {
   updatedAt: PayloadPreference_updatedAt_operator
   createdAt: PayloadPreference_createdAt_operator
   id: PayloadPreference_id_operator
+  AND: [PayloadPreference_where_and]
+  OR: [PayloadPreference_where_or]
 }
 
 input PayloadPreference_where_or {
@@ -7165,6 +7510,8 @@ input PayloadPreference_where_or {
   updatedAt: PayloadPreference_updatedAt_operator
   createdAt: PayloadPreference_createdAt_operator
   id: PayloadPreference_id_operator
+  AND: [PayloadPreference_where_and]
+  OR: [PayloadPreference_where_or]
 }
 
 type payload_preferencesDocAccess {
@@ -7593,6 +7940,8 @@ input Header_NavItems_Link_Icon_where_and {
   width: Header_NavItems_Link_Icon_width_operator
   height: Header_NavItems_Link_Icon_height_operator
   id: Header_NavItems_Link_Icon_id_operator
+  AND: [Header_NavItems_Link_Icon_where_and]
+  OR: [Header_NavItems_Link_Icon_where_or]
 }
 
 input Header_NavItems_Link_Icon_where_or {
@@ -7607,6 +7956,8 @@ input Header_NavItems_Link_Icon_where_or {
   width: Header_NavItems_Link_Icon_width_operator
   height: Header_NavItems_Link_Icon_height_operator
   id: Header_NavItems_Link_Icon_id_operator
+  AND: [Header_NavItems_Link_Icon_where_and]
+  OR: [Header_NavItems_Link_Icon_where_or]
 }
 
 type headerDocAccess {
@@ -7901,7 +8252,7 @@ type HeaderUpdateDocAccess {
 }
 
 type Footer {
-  copyright: String!
+  copyright: String
   navItems: [Footer_NavItems!]
   updatedAt: DateTime
   createdAt: DateTime
@@ -8079,6 +8430,8 @@ input Footer_NavItems_Link_Icon_where_and {
   width: Footer_NavItems_Link_Icon_width_operator
   height: Footer_NavItems_Link_Icon_height_operator
   id: Footer_NavItems_Link_Icon_id_operator
+  AND: [Footer_NavItems_Link_Icon_where_and]
+  OR: [Footer_NavItems_Link_Icon_where_or]
 }
 
 input Footer_NavItems_Link_Icon_where_or {
@@ -8093,6 +8446,8 @@ input Footer_NavItems_Link_Icon_where_or {
   width: Footer_NavItems_Link_Icon_width_operator
   height: Footer_NavItems_Link_Icon_height_operator
   id: Footer_NavItems_Link_Icon_id_operator
+  AND: [Footer_NavItems_Link_Icon_where_and]
+  OR: [Footer_NavItems_Link_Icon_where_or]
 }
 
 type footerDocAccess {
@@ -8910,34 +9265,9 @@ type PagesFields_meta_Delete {
 }
 
 type PagesFields_meta_Fields {
-  overview: PagesFields_meta_overview
   title: PagesFields_meta_title
   description: PagesFields_meta_description
   image: PagesFields_meta_image
-  preview: PagesFields_meta_preview
-}
-
-type PagesFields_meta_overview {
-  create: PagesFields_meta_overview_Create
-  read: PagesFields_meta_overview_Read
-  update: PagesFields_meta_overview_Update
-  delete: PagesFields_meta_overview_Delete
-}
-
-type PagesFields_meta_overview_Create {
-  permission: Boolean!
-}
-
-type PagesFields_meta_overview_Read {
-  permission: Boolean!
-}
-
-type PagesFields_meta_overview_Update {
-  permission: Boolean!
-}
-
-type PagesFields_meta_overview_Delete {
-  permission: Boolean!
 }
 
 type PagesFields_meta_title {
@@ -9006,29 +9336,6 @@ type PagesFields_meta_image_Update {
 }
 
 type PagesFields_meta_image_Delete {
-  permission: Boolean!
-}
-
-type PagesFields_meta_preview {
-  create: PagesFields_meta_preview_Create
-  read: PagesFields_meta_preview_Read
-  update: PagesFields_meta_preview_Update
-  delete: PagesFields_meta_preview_Delete
-}
-
-type PagesFields_meta_preview_Create {
-  permission: Boolean!
-}
-
-type PagesFields_meta_preview_Read {
-  permission: Boolean!
-}
-
-type PagesFields_meta_preview_Update {
-  permission: Boolean!
-}
-
-type PagesFields_meta_preview_Delete {
   permission: Boolean!
 }
 
@@ -9137,6 +9444,7 @@ type productsAccess {
 
 type ProductsFields {
   title: ProductsFields_title
+  feedbacks: ProductsFields_feedbacks
   publishedOn: ProductsFields_publishedOn
   layout: ProductsFields_layout
   stripeProductID: ProductsFields_stripeProductID
@@ -9173,6 +9481,153 @@ type ProductsFields_title_Update {
 }
 
 type ProductsFields_title_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks {
+  create: ProductsFields_feedbacks_Create
+  read: ProductsFields_feedbacks_Read
+  update: ProductsFields_feedbacks_Update
+  delete: ProductsFields_feedbacks_Delete
+  fields: ProductsFields_feedbacks_Fields
+}
+
+type ProductsFields_feedbacks_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_Fields {
+  name: ProductsFields_feedbacks_name
+  email: ProductsFields_feedbacks_email
+  rating: ProductsFields_feedbacks_rating
+  feedback: ProductsFields_feedbacks_feedback
+  id: ProductsFields_feedbacks_id
+}
+
+type ProductsFields_feedbacks_name {
+  create: ProductsFields_feedbacks_name_Create
+  read: ProductsFields_feedbacks_name_Read
+  update: ProductsFields_feedbacks_name_Update
+  delete: ProductsFields_feedbacks_name_Delete
+}
+
+type ProductsFields_feedbacks_name_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_name_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_name_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_name_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_email {
+  create: ProductsFields_feedbacks_email_Create
+  read: ProductsFields_feedbacks_email_Read
+  update: ProductsFields_feedbacks_email_Update
+  delete: ProductsFields_feedbacks_email_Delete
+}
+
+type ProductsFields_feedbacks_email_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_email_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_email_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_email_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_rating {
+  create: ProductsFields_feedbacks_rating_Create
+  read: ProductsFields_feedbacks_rating_Read
+  update: ProductsFields_feedbacks_rating_Update
+  delete: ProductsFields_feedbacks_rating_Delete
+}
+
+type ProductsFields_feedbacks_rating_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_rating_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_rating_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_rating_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_feedback {
+  create: ProductsFields_feedbacks_feedback_Create
+  read: ProductsFields_feedbacks_feedback_Read
+  update: ProductsFields_feedbacks_feedback_Update
+  delete: ProductsFields_feedbacks_feedback_Delete
+}
+
+type ProductsFields_feedbacks_feedback_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_feedback_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_feedback_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_feedback_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_id {
+  create: ProductsFields_feedbacks_id_Create
+  read: ProductsFields_feedbacks_id_Read
+  update: ProductsFields_feedbacks_id_Update
+  delete: ProductsFields_feedbacks_id_Delete
+}
+
+type ProductsFields_feedbacks_id_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_id_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_id_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_feedbacks_id_Delete {
   permission: Boolean!
 }
 
@@ -9431,34 +9886,9 @@ type ProductsFields_meta_Delete {
 }
 
 type ProductsFields_meta_Fields {
-  overview: ProductsFields_meta_overview
   title: ProductsFields_meta_title
   description: ProductsFields_meta_description
   image: ProductsFields_meta_image
-  preview: ProductsFields_meta_preview
-}
-
-type ProductsFields_meta_overview {
-  create: ProductsFields_meta_overview_Create
-  read: ProductsFields_meta_overview_Read
-  update: ProductsFields_meta_overview_Update
-  delete: ProductsFields_meta_overview_Delete
-}
-
-type ProductsFields_meta_overview_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_overview_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_overview_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_overview_Delete {
-  permission: Boolean!
 }
 
 type ProductsFields_meta_title {
@@ -9527,29 +9957,6 @@ type ProductsFields_meta_image_Update {
 }
 
 type ProductsFields_meta_image_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_preview {
-  create: ProductsFields_meta_preview_Create
-  read: ProductsFields_meta_preview_Read
-  update: ProductsFields_meta_preview_Update
-  delete: ProductsFields_meta_preview_Delete
-}
-
-type ProductsFields_meta_preview_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_preview_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_preview_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_meta_preview_Delete {
   permission: Boolean!
 }
 
@@ -9659,6 +10066,7 @@ type OrdersFields {
   orderedBy: OrdersFields_orderedBy
   stripePaymentIntentID: OrdersFields_stripePaymentIntentID
   total: OrdersFields_total
+  status: OrdersFields_status
   items: OrdersFields_items
   updatedAt: OrdersFields_updatedAt
   createdAt: OrdersFields_createdAt
@@ -9730,6 +10138,29 @@ type OrdersFields_total_Update {
 }
 
 type OrdersFields_total_Delete {
+  permission: Boolean!
+}
+
+type OrdersFields_status {
+  create: OrdersFields_status_Create
+  read: OrdersFields_status_Read
+  update: OrdersFields_status_Update
+  delete: OrdersFields_status_Delete
+}
+
+type OrdersFields_status_Create {
+  permission: Boolean!
+}
+
+type OrdersFields_status_Read {
+  permission: Boolean!
+}
+
+type OrdersFields_status_Update {
+  permission: Boolean!
+}
+
+type OrdersFields_status_Delete {
   permission: Boolean!
 }
 
@@ -12077,6 +12508,7 @@ enum PageUpdate__status_MutationInput {
 
 input mutationProductInput {
   title: String!
+  feedbacks: [mutationProduct_FeedbacksInput]
   publishedOn: String
   layout: JSON
   stripeProductID: String
@@ -12093,6 +12525,14 @@ input mutationProductInput {
   _status: Product__status_MutationInput
 }
 
+input mutationProduct_FeedbacksInput {
+  name: String
+  email: String
+  rating: Float
+  feedback: String
+  id: String
+}
+
 input mutationProduct_MetaInput {
   title: String
   description: String
@@ -12106,6 +12546,7 @@ enum Product__status_MutationInput {
 
 input mutationProductUpdateInput {
   title: String
+  feedbacks: [mutationProductUpdate_FeedbacksInput]
   publishedOn: String
   layout: JSON
   stripeProductID: String
@@ -12120,6 +12561,14 @@ input mutationProductUpdateInput {
   updatedAt: String
   createdAt: String
   _status: ProductUpdate__status_MutationInput
+}
+
+input mutationProductUpdate_FeedbacksInput {
+  name: String
+  email: String
+  rating: Float
+  feedback: String
+  id: String
 }
 
 input mutationProductUpdate_MetaInput {
@@ -12137,9 +12586,17 @@ input mutationOrderInput {
   orderedBy: String
   stripePaymentIntentID: String
   total: Float!
+  status: Order_status_MutationInput
   items: [mutationOrder_ItemsInput]
   updatedAt: String
   createdAt: String
+}
+
+enum Order_status_MutationInput {
+  Pending
+  Processing
+  Shipped
+  Delivered
 }
 
 input mutationOrder_ItemsInput {
@@ -12153,9 +12610,17 @@ input mutationOrderUpdateInput {
   orderedBy: String
   stripePaymentIntentID: String
   total: Float
+  status: OrderUpdate_status_MutationInput
   items: [mutationOrderUpdate_ItemsInput]
   updatedAt: String
   createdAt: String
+}
+
+enum OrderUpdate_status_MutationInput {
+  Pending
+  Processing
+  Shipped
+  Delivered
 }
 
 input mutationOrderUpdate_ItemsInput {
@@ -12429,7 +12894,7 @@ enum Header_NavItems_Link_ReferenceRelationshipInputRelationTo {
 }
 
 input mutationFooterInput {
-  copyright: String!
+  copyright: String
   navItems: [mutationFooter_NavItemsInput]
   updatedAt: String
   createdAt: String
