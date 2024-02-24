@@ -90,6 +90,10 @@
     border: 1px solid black;
 }
 
+.ps-title {
+    margin: 2rem;
+}
+
 @media (max-width: 1024px) {
     .prod-carousal {
         max-width: 92%;
