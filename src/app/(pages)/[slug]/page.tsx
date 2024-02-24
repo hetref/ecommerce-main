@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
-
+import HomePage from '../../pages/home'
 import { Category, Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
@@ -63,12 +63,7 @@ export default async function Page({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section>
-          <Hero {...hero} />
-
-          <Gutter className={classes.home}>
-            <Categories categories={categories} />
-            <Promotion />
-          </Gutter>
+          <HomePage />
         </section>
       ) : (
         <>
