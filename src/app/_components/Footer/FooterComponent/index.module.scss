@@ -1,7 +1,7 @@
 @use '../../../_css/queries.scss' as *;
 
 .footer {
-  padding: 30px 0;
+  padding: 1rem 0;
   background-color: var(--theme-elevation-1000);
   color: var(--theme-elevation-0);
 
@@ -14,7 +14,7 @@
 .inclusions {
   display: grid;
   justify-content: center;
-  gap: 30px;
+  gap: 0px;
   padding: 0;
   grid-template-columns: repeat(4, 1fr);
   margin: 100px 0;
@@ -59,10 +59,6 @@
   }
 }
 
-.logo {
-  width: 170px;
-}
-
 .hr {
   border-color: var(--color-white-500-20);
 }
@@ -84,4 +80,3 @@
 .hide {
   display: none;
 }
-

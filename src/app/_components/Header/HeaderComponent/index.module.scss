@@ -1,5 +1,5 @@
 .header {
-  padding: 36px 0;
+  padding: 1rem 0;
 }
 
 .wrap {
@@ -10,10 +10,10 @@
   gap: calc(var(--base) / 2) var(--base)
 }
 
-.logo {
-  width: 170px;
+.logo img {
+  width: 50%;
 }
 
-.hide { 
+.hide {
   display: none;
 }
