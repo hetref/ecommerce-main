@@ -63,7 +63,6 @@ export default async function Page({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section>
-
           <Hero {...hero} />
 
           <HomePage />
@@ -73,7 +72,6 @@ export default async function Page({ params: { slug = 'home' } }) {
             <Categories categories={categories} />
             <Promotion />
           </Gutter>
-
         </section>
       ) : (
         <>
