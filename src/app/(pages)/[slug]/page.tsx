@@ -63,6 +63,9 @@ export default async function Page({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section>
+
+          <Hero {...hero} />
+
           <HomePage />
           <Gutter className={classes.home}>
             <Categories categories={categories} />

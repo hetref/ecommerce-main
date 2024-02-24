@@ -28,6 +28,12 @@ export const PRODUCT = `
         }
         priceJSON
         enablePaywall
+        feedbacks {
+          name
+          email
+          rating
+          feedback
+        }
         relatedProducts {
           id
           slug

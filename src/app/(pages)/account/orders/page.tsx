@@ -66,13 +66,14 @@ export default async function Orders() {
                     <p className={classes.orderDate}>{`Ordered On: ${formatDateTime(
                       order.createdAt,
                     )}`}</p>
+                    <span className={classes.status}>{`Status: ${order.status}`}</span>
                   </div>
                 </div>
                 <Button
                   appearance="default"
                   label="View Order"
                   className={classes.button}
-                  el="link"
+                  el="button"
                   href={`/account/orders/${order.id}`}
                 />
               </Link>

@@ -1,0 +1,32 @@
+.feedbackWrapper {
+    margin-bottom: 52px;
+    margin-top: 52px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h2 {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 36px;
+}
+
+.gridWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+}
+
+.gridCard {
+    padding: 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
