@@ -82,7 +82,7 @@ const AestheticSlider = () => {
           <SwiperSlide key={index} style={style}>
             <section className="slide-content">
               <h1 className="hanson slide-title">
-                WINTER <br />
+                Category Name <br />
                 <span className="slide-subtitle">2024</span>
               </h1>
               <p className="slide-desc">
@@ -91,7 +91,7 @@ const AestheticSlider = () => {
                 molestie. Aliquam.
               </p>
               <button className="slide-button">
-                <span className="noselect">VIEW COLLECTION</span>
+                <span className="noselect">VIEW PRODUCTS</span>
               </button>
             </section>
           </SwiperSlide>
