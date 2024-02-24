@@ -2,6 +2,7 @@
 
 .nav {
   display: flex;
+  color: white !important;
   gap: calc(var(--base) / 4) var(--base);
   align-items: center;
   flex-wrap: wrap;
@@ -9,7 +10,7 @@
   transition: opacity 100ms linear;
   visibility: visible;
 
-  > * {
+  >* {
     text-decoration: none;
   }
 }
