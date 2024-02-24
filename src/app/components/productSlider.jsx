@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import '../styles/prod-carousal.css';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
-import s1image from '../images/slide1.jpg';
+import s1image from '../images/headerbg.png';
 
 const ProductSlider = () => {
 
@@ -38,6 +38,7 @@ const ProductSlider = () => {
     };
     return (
         <>
+            <h2 className='ps-title'>Featured Products</h2>
             <Swiper {...swiperParams} className="prod-carousal">
                 <SwiperSlide className='slide-item'>
                     <div>
