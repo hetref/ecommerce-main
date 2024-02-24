@@ -4,7 +4,7 @@ import 'swiper/css/navigation';
 import './../styles/AestheticSlider.css';
 import { Navigation, Autoplay } from 'swiper/modules';
 import '../styles/AestheticSlider.css';
-import s1image from '../images/slide1.jpg';
+import s1image from '../images/headerbg.png';
 
 const AestheticSlider = () => {
 
@@ -82,7 +82,7 @@ const AestheticSlider = () => {
                 {s1bg.map((style, index) => (
                     <SwiperSlide key={index} style={style}>
                         <section className='slide-content'>
-                            <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
+                            <h1 className='hanson slide-title'>Category Name <br /><span className='slide-subtitle'>2024</span></h1>
                             <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
                             <button className='slide-button'><span className="noselect">VIEW COLLECTION</span></button>
                         </section>

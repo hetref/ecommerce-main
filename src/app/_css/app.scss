@@ -137,7 +137,10 @@ svg {
 }
 
 .navwrapper nav span,
-.navwrapper nav a {
-  background: black;
+.navwrapper nav .link {
   color: white !important;
+}
+
+.navwrapper nav button {
+  background: #2A402B !important;
 }

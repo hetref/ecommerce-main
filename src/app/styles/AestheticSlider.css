@@ -36,7 +36,7 @@
 
 .slide-content {
     text-align: left;
-    width: 40%;
+    width: 50%;
     padding-left: 7rem;
 }
 
@@ -46,13 +46,13 @@
 
 .slide-title {
     width: fit-content;
-    font-size: 8rem;
-    line-height: 0.45em;
-    margin-top: 7rem;
+    font-size: 4.5rem;
+    line-height: 0.95em;
+    margin-top: 6.5rem;
 }
 
 .slide-subtitle {
-    font-size: 4rem;
+    font-size: 2rem;
     padding-left: 1rem;
 }
 
