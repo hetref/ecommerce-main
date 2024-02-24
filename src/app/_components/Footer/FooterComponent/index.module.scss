@@ -14,7 +14,7 @@
 .inclusions {
   display: grid;
   justify-content: center;
-  gap: 0px;
+  gap: 20px;
   padding: 0;
   grid-template-columns: repeat(4, 1fr);
   margin: 100px 0;
@@ -29,6 +29,12 @@
 
   @include extra-small-break {
     grid-template-columns: 1fr;
+  }
+
+  li {
+    border: 2px solid #ededed;
+    border-radius: 10px;
+    padding: 16px 24px;
   }
 }
 

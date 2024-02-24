@@ -4,8 +4,11 @@ import 'swiper/css/pagination'
 import '../styles/prod-carousal.css'
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules'
 import s1image from '../images/headerbg.png'
+import Image from 'next/image'
+// import { fetchDocs } from '../../_api/fetchDocs'
+import { fetchDocs } from '../_api/fetchDocs'
 
-const ProductSlider = () => {
+const ProductSlider = async () => {
   const swiperParams = {
     modules: [Autoplay, FreeMode, Pagination],
     allowTouchMove: true,
@@ -35,18 +38,35 @@ const ProductSlider = () => {
       },
     },
   }
+
+  const fetchProducts = async () => {
+    products = await fetchDocs<Category>('categories')
+    console.log(products)
+  }
+
+  try {
+    fetchProducts()
+  } catch (error) {
+    console.log(error)
+  }
   return (
     <>
       <h2 className="ps-title">Featured Products</h2>
       <Swiper {...swiperParams} className="prod-carousal">
         <SwiperSlide className="slide-item">
           <div>
-            <img src={s1image} alt="" />
+            {/* <img src={s1image} alt="" /> */}
+            <Image
+              src="http://localhost:3000/media/spices.png"
+              alt="Logo"
+              width={4000}
+              height={2000}
+            />
             <section className="prod-info">
               <h3 className="prod-title">Product 1</h3>
               <div className="prod-price">₹2000</div>
               <button className="buy-now">
-                <span class="noselect">BUY NOW</span>
+                <span className="noselect">BUY NOW</span>
               </button>
             </section>
           </div>
@@ -58,7 +78,7 @@ const ProductSlider = () => {
               <h3 className="prod-title">Product 1</h3>
               <div className="prod-price">₹2000</div>
               <button className="buy-now">
-                <span class="noselect">BUY NOW</span>
+                <span className="noselect">BUY NOW</span>
               </button>
             </section>
           </div>
@@ -70,7 +90,7 @@ const ProductSlider = () => {
               <h3 className="prod-title">Product 1</h3>
               <div className="prod-price">₹2000</div>
               <button className="buy-now">
-                <span class="noselect">BUY NOW</span>
+                <span className="noselect">BUY NOW</span>
               </button>
             </section>
           </div>
@@ -82,7 +102,7 @@ const ProductSlider = () => {
               <h3 className="prod-title">Product 1</h3>
               <div className="prod-price">₹2000</div>
               <button className="buy-now">
-                <span class="noselect">BUY NOW</span>
+                <span className="noselect">BUY NOW</span>
               </button>
             </section>
           </div>
@@ -95,7 +115,7 @@ const ProductSlider = () => {
               <h3 className="prod-title">Product 1</h3>
               <div className="prod-price">₹2000</div>
               <button className="buy-now">
-                <span class="noselect">BUY NOW</span>
+                <span className="noselect">BUY NOW</span>
               </button>
             </section>
           </div>
@@ -107,7 +127,7 @@ const ProductSlider = () => {
               <h3 className="prod-title">Product 1</h3>
               <div className="prod-price">₹2000</div>
               <button className="buy-now">
-                <span class="noselect">BUY NOW</span>
+                <span className="noselect">BUY NOW</span>
               </button>
             </section>
           </div>

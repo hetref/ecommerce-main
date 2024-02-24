@@ -1,12 +1,17 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import './../styles/AestheticSlider.css';
-import { Navigation, Autoplay } from 'swiper/modules';
-import '../styles/AestheticSlider.css';
-import s1image from '../images/headerbg.png';
+'use client'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import './../styles/AestheticSlider.css'
+import { Navigation, Autoplay } from 'swiper/modules'
+import '../styles/AestheticSlider.css'
+import s1image from '../images/headerbg.png'
+import { redirect, useRouter } from 'next/navigation'
 
 const AestheticSlider = () => {
+  const router = useRouter()
+
   const s1bg = [
     {
       color: '#fff',
@@ -82,7 +87,7 @@ const AestheticSlider = () => {
           <SwiperSlide key={index} style={style}>
             <section className="slide-content">
               <h1 className="hanson slide-title">
-                Category Name <br />
+                Slide Title <br />
                 <span className="slide-subtitle">2024</span>
               </h1>
               <p className="slide-desc">
@@ -90,7 +95,7 @@ const AestheticSlider = () => {
                 vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada
                 molestie. Aliquam.
               </p>
-              <button className="slide-button">
+              <button onClick={() => router.push('/products')} className="slide-button">
                 <span className="noselect">VIEW PRODUCTS</span>
               </button>
             </section>
