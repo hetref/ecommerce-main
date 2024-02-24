@@ -3,6 +3,12 @@
     margin-top: 52px;
 }
 
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .heading h2 {
     margin: 0;
     line-height: 1.15;
