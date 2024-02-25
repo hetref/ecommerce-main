@@ -1,6 +1,5 @@
 'use client'
-import AestheticSlider from '../components/aestheticSlider'
-import ProductSlider from '../components/productSlider'
+import AestheticSlider from '../components/aestheticSlider.jsx'
 
 const HomePage = () => {
   return (
